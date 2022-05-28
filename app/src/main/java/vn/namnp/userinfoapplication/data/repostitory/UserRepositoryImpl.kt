@@ -8,7 +8,9 @@ import vn.namnp.userinfoapplication.data.datasource.UserPagingDataSource
 import vn.namnp.userinfoapplication.data.model.UserModel
 import vn.namnp.userinfoapplication.network.UserApi
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class UserRepositoryImpl @Inject constructor(
     private val userApi: UserApi
 ): UserRepository {

@@ -1,5 +1,6 @@
 package vn.namnp.userinfoapplication.presentation.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil.inflate
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import vn.namnp.userinfoapplication.R
 import vn.namnp.userinfoapplication.databinding.ItemUserBinding
 import vn.namnp.userinfoapplication.presentation.ui.UserUiItemState
+import vn.namnp.userinfoapplication.util.extensions.executeWithAction
 import javax.inject.Inject
 
 class UserAdapter @Inject constructor() :
@@ -30,6 +32,7 @@ class UserAdapter @Inject constructor() :
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+        Log.e("AAAA", "" + position+"");
         getItem(position)?.let {
             userUiItemState -> holder.bind(userUiItemState)
         }
@@ -48,7 +51,9 @@ class UserAdapter @Inject constructor() :
 
     inner class UserViewHolder(private val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(userUiItemState: UserUiItemState) {
-
+            binding.executeWithAction {
+                this.userUiItemState = userUiItemState
+            }
         }
     }
 }
