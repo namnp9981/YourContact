@@ -32,7 +32,6 @@ class UserAdapter @Inject constructor() :
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        Log.e("AAAA", "" + position+"");
         getItem(position)?.let {
             userUiItemState -> holder.bind(userUiItemState)
         }

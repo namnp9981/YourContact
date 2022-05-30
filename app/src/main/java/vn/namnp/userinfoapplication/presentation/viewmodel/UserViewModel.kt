@@ -1,4 +1,4 @@
-package vn.namnp.userinfoapplication.network
+package vn.namnp.userinfoapplication.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
